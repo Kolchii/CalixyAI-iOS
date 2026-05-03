@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F7F4EE"/>
+      <stop offset="100%" stop-color="#F1F7F1"/>
+    </linearGradient>
+    <radialGradient id="orb1" cx="28%" cy="16%" r="56%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="arcGrad" x1="230" y1="220" x2="796" y2="802" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#16997A"/>
+      <stop offset="50%" stop-color="#0F6B59"/>
+      <stop offset="100%" stop-color="#7EC8A2"/>
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="410" y1="340" x2="626" y2="742" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#129A7B"/>
+      <stop offset="100%" stop-color="#0F6B59"/>
+    </linearGradient>
+    <linearGradient id="leafHi" x1="465" y1="350" x2="610" y2="670" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="dotGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#86D5B2"/>
+      <stop offset="100%" stop-color="#1A8B6E"/>
+    </linearGradient>
+    <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="18" result="blur"/>
+      <feOffset dx="0" dy="10" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.18"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect x="32" y="32" width="960" height="960" rx="220" fill="url(#bgGrad)"/>
+
+  <circle cx="292" cy="208" r="320" fill="url(#orb1)"/>
+  <circle cx="810" cy="860" r="250" fill="#CFE6D8" opacity="0.18"/>
+  <g filter="url(#softShadow)">
+    <path d="M 675.93 370.44 A 214.00 214.00 0 1 1 438.81 306.91" fill="none" stroke="url(#arcGrad)" stroke-width="82" stroke-linecap="round"/>
+    <path d="M 512.00 372.00 C 624.00 432.00 654.00 540.00 530.00 744.00 C 400.00 616.00 372.00 506.00 512.00 372.00 Z" fill="url(#leafGrad)"/>
+    <path d="M 512.00 372.00 C 624.00 432.00 654.00 540.00 530.00 744.00 C 400.00 616.00 372.00 506.00 512.00 372.00 Z" fill="url(#leafHi)" opacity="0.65"/>
+    <path d="M 520.00 420.00 C 538.00 500.00 532.00 594.00 506.00 700.00" fill="none" stroke="rgba(255,255,255,0.78)" stroke-width="13" stroke-linecap="round"/>
+    <circle cx="744" cy="294" r="14" fill="url(#dotGrad)" opacity="0.95" />
+<circle cx="780" cy="264" r="11" fill="url(#dotGrad)" opacity="0.95" />
+<circle cx="810" cy="232" r="8" fill="url(#dotGrad)" opacity="0.95" />
+  </g>
+</svg>

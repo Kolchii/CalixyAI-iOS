@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct SplashView: View {
+    @State private var isActive = false
     var body: some View {
+        NavigationLink(destination: LanguageSelectionView(), isActive: $isActive) { EmptyView() }
         VStack(spacing: 8) {
             Image("CalixyIcon")
                 .resizable()
@@ -21,6 +23,11 @@ struct SplashView: View {
                 .font(.subheadline)
                 .foregroundStyle(.gray)
         } .background(.white)
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    isActive = true
+                }
+            }
         
     }
 }

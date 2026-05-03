@@ -11,7 +11,7 @@ import SwiftUI
 struct CalixyAIApp: App {
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            NavigationStack { SplashView() }
         }
     }
 }

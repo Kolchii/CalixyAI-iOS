@@ -12,7 +12,7 @@ struct LanguageSelectionView: View {
     var body: some View {
         VStack(spacing: 0) {
             
-            // YUXARI — yaşıl hissə
+            //MARK: YUXARI — yaşıl hissə
             VStack(spacing: 8) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
@@ -31,7 +31,7 @@ struct LanguageSelectionView: View {
             .padding(.vertical, 80)
             .background(Color.primaryDark)
             
-            // AŞAĞI — ağ hissə, yuxarı künclər yuvarlaq
+            //MARK: AŞAĞI — ağ hissə, yuxarı künclər yuvarlaq
             ScrollView {
                 VStack(spacing: 12) {
                     Text("Choose Your Language")

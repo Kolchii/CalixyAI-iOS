@@ -23,14 +23,14 @@ final class RegisterViewModel: ObservableObject {
     
     // MARK: - Actions
     func register() {
-        // NetworkManager hazır olanda buraya API çağırışı əlavə ediləcək
+        // NetworkManager hazır olanda
     }
     
     func signInWithGoogle() {
-        // Firebase Google Sign In buraya əlavə ediləcək
+        // Firebase Google Sign
     }
     
     func signInWithApple() {
-        // Apple Sign In buraya əlavə ediləcək
+        // Apple Sign In
     }
 }

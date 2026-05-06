@@ -4,12 +4,12 @@
 //
 //  Created by Ibrahim Kolchi on 03.05.26.
 //
-
 import SwiftUI
 
 struct VerifyEmailView: View {
     @StateObject private var viewModel = VerifyEmailViewModel()
     @Environment(\.dismiss) private var dismiss
+    @FocusState private var focusedField: Int?
     
     var body: some View {
         ScrollView {
@@ -49,6 +49,15 @@ struct VerifyEmailView: View {
                             .background(Color.white)
                             .cornerRadius(12)
                             .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color(.systemGray5), lineWidth: 1))
+                            .focused($focusedField, equals: index)
+                            .onChange(of: viewModel.otpDigits[index]) { newValue in
+                                if newValue.count > 1 {
+                                    viewModel.otpDigits[index] = String(newValue.last!)
+                                }
+                                if newValue.count == 1 && index < 5 {
+                                    focusedField = index + 1
+                                }
+                            }
                     }
                 }
                 

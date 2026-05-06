@@ -7,12 +7,12 @@
 import SwiftUI
 
 struct LanguageSelectionView: View {
-    @State private var selectedLanguage = "EN"
+    @StateObject private var viewModel = LanguageSelectionViewModel()
     
     var body: some View {
         VStack(spacing: 0) {
             
-            //MARK: YUXARI — yaşıl hissə
+            // MARK: - YUXARI — yaşıl hissə
             VStack(spacing: 8) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
@@ -31,7 +31,7 @@ struct LanguageSelectionView: View {
             .padding(.vertical, 80)
             .background(Color.primaryDark)
             
-            //MARK: AŞAĞI — ağ hissə, yuxarı künclər yuvarlaq
+            // MARK: - AŞAĞI — ağ hissə, yuxarı künclər yuvarlaq
             ScrollView {
                 VStack(spacing: 12) {
                     Text("Choose Your Language")
@@ -41,12 +41,12 @@ struct LanguageSelectionView: View {
                         .foregroundStyle(.gray)
                         .multilineTextAlignment(.center)
                     
-                    Button { selectedLanguage = "AZ" } label: {
+                    Button { viewModel.selectedLanguage = "AZ" } label: {
                         HStack {
                             Text("🇦🇿")
                             Text("Azərbaycan")
                             Spacer()
-                            Image(systemName: selectedLanguage == "AZ" ? "checkmark.circle.fill" : "circle")
+                            Image(systemName: viewModel.selectedLanguage == "AZ" ? "checkmark.circle.fill" : "circle")
                         }
                         .padding()
                         .background(.white)
@@ -55,12 +55,12 @@ struct LanguageSelectionView: View {
                     }
                     .foregroundStyle(.black)
                     
-                    Button { selectedLanguage = "TR" } label: {
+                    Button { viewModel.selectedLanguage = "TR" } label: {
                         HStack {
                             Text("🇹🇷")
                             Text("Türkçe")
                             Spacer()
-                            Image(systemName: selectedLanguage == "TR" ? "checkmark.circle.fill" : "circle")
+                            Image(systemName: viewModel.selectedLanguage == "TR" ? "checkmark.circle.fill" : "circle")
                         }
                         .padding()
                         .background(.white)
@@ -69,12 +69,12 @@ struct LanguageSelectionView: View {
                     }
                     .foregroundStyle(.black)
                     
-                    Button { selectedLanguage = "EN" } label: {
+                    Button { viewModel.selectedLanguage = "EN" } label: {
                         HStack {
                             Text("🇺🇸")
                             Text("English")
                             Spacer()
-                            Image(systemName: selectedLanguage == "EN" ? "checkmark.circle.fill" : "circle")
+                            Image(systemName: viewModel.selectedLanguage == "EN" ? "checkmark.circle.fill" : "circle")
                         }
                         .padding()
                         .background(.white)
@@ -83,12 +83,12 @@ struct LanguageSelectionView: View {
                     }
                     .foregroundStyle(.black)
                     
-                    Button { selectedLanguage = "RU" } label: {
+                    Button { viewModel.selectedLanguage = "RU" } label: {
                         HStack {
                             Text("🇷🇺")
                             Text("Русский")
                             Spacer()
-                            Image(systemName: selectedLanguage == "RU" ? "checkmark.circle.fill" : "circle")
+                            Image(systemName: viewModel.selectedLanguage == "RU" ? "checkmark.circle.fill" : "circle")
                         }
                         .padding()
                         .background(.white)
@@ -97,7 +97,7 @@ struct LanguageSelectionView: View {
                     }
                     .foregroundStyle(.black)
                     
-                    Button { } label: {
+                    Button { viewModel.saveLanguage() } label: {
                         Text("Continue")
                             .foregroundStyle(.white)
                             .frame(maxWidth: .infinity)
